@@ -30,7 +30,7 @@ module.exports = {
         const attachment = new MessageAttachment(image, "kiss.png");
 
         interaction.followUp({
-            emkisss: [],
+            embed: [],
             files: [attachment]
         }).catch(() => {});
     },
