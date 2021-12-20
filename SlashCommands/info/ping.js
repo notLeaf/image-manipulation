@@ -2,7 +2,7 @@ const { Client, CommandInteraction } = require("discord.js");
 
 module.exports = {
     name: "ping",
-    description: "returns websocket ping",
+    description: "websocket ping",
     type: 'CHAT_INPUT',
 
     run: async (client, interaction) => {
