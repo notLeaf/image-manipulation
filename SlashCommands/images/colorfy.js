@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "colorfy",
     description: "colorfy image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

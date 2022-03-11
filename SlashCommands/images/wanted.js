@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "wanted",
     description: "wanted image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

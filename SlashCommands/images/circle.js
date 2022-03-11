@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "circle",
     description: "circle image",
+    category: "images",
     clientPermissions: "ATTACH_FILES",
     options: [{
         name: "target",

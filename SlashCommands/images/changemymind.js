@@ -6,13 +6,11 @@ const {
 const {
     Canvas
 } = require("canvacord");
-const {
-    fail
-} = require("../../config.json");
 
 module.exports = {
     name: "changemymind",
     description: "changemymind image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "query",
@@ -23,11 +21,9 @@ module.exports = {
 
     run: async (client, interaction, args) => {
 
-        const text = args.slice(0).join(' ');
-        if (text.length > 100)
-            return interaction.followUp({
-                content: `${fail} Text can't be longer than 100 characters`
-            })
+        const text = interaction.options.getString('query')?.trim()?.split(/ +/g)?.join(" ");
+        if (text.length > 100) text = text.slice(0, 95) + '...'
+
         const image = await Canvas.changemymind(text);
         const attachment = new MessageAttachment(image, "changemymind.png");
 

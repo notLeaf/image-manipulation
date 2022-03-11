@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "burn",
     description: "burn image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

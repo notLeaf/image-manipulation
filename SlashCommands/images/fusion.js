@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "fusion",
     description: "avatar fusion image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

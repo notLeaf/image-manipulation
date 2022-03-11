@@ -1,20 +1,14 @@
 const client = require("../index");
 
 client.on("messageCreate", async (message) => {
+    if (message.content === `<@${client.user.id}>` || message.content === `<@!${client.user.id}>`)
+        return message.channel.send({
+            content: `Hi ${message.author} I'm **${client.user.username}**\nA powerful image manipulation Discord bot`
+        })
+
     if (
         message.author.bot ||
-        !message.guild ||
-        !message.content.toLowerCase().startsWith(client.config.prefix)
+        !message.guild
     )
         return;
-
-    const [cmd, ...args] = message.content
-        .slice(client.config.prefix.length)
-        .trim()
-        .split(/ +/g);
-
-    const command = client.commands.get(cmd.toLowerCase()) || client.commands.find(c => c.aliases?.includes(cmd.toLowerCase()));
-
-    if (!command) return;
-    await command.run(client, message, args);
 });

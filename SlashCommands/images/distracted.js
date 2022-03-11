@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "distracted",
     description: "distracted image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

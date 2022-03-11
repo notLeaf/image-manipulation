@@ -10,30 +10,46 @@ const {
 module.exports = {
     name: 'help',
     description: 'All commands',
+    category: "info",
 
     run: async (client, interaction) => {
-        
+
         const embed = new MessageEmbed()
             .setTitle(`${client.user.username}'s Commands`)
             .setDescription('Click the menu below')
             .addField(`Links:`, `[Youtube Channel](https://www.youtube.com/channel/UC9yRVadElzxSO3ZUywK6Yig) - [Discord Server](https://discord.gg/yfD2Vmnr6F)`, true)
             .setColor('RANDOM')
-            .setFooter(interaction.user.username, interaction.user.displayAvatarURL())
+            .setFooter({
+                name: `${interaction.user.tag}`,
+                iconURL: interaction.user.displayAvatarURL({
+                    dynamic: true
+                })
+            })
             .setTimestamp()
 
         const image = new MessageEmbed()
             .setTitle("Image manipulation Commands")
-            .setDescription("\`affect\`, \`beautiful\`, \`bed\`, \`blur\`, \`brightness\`, \`burn\`, \`changemymind\`, \`circle\`, \`clyde\`, \`colorfy\`, \`darkness\`, \`delete\`, \`distracted\`, \`facepalm\`, \`fusion\`, \`greyscale\`, \`invert\`, \`jail\`, \`kiss\`, \`rainbow\`, \`rip\`, \`sepia\`, \`sharpen\`, \`slap\`, \`spank\`, \`trash\`, \`triggered\`, \`wanted\`, \`wasted\`")
+            .setDescription(client.slashCommands.filter(cmd => cmd.category === "images").map(cmd => `\`${cmd.name}\``).join(', '))
             .setColor('RANDOM')
-            .setFooter(interaction.user.username, interaction.user.displayAvatarURL())
+            .setFooter({
+                name: `${interaction.user.tag}`,
+                iconURL: interaction.user.displayAvatarURL({
+                    dynamic: true
+                })
+            })
             .setTimestamp();
 
 
         const general = new MessageEmbed()
             .setTitle("Info Commands")
-            .setDescription("\`help\`, \`ping\`")
+            .setDescription(client.slashCommands.filter(cmd => cmd.category === "info").map(cmd => `\`${cmd.name}\``).join(', '))
             .setColor('RANDOM')
-            .setFooter(interaction.user.username, interaction.user.displayAvatarURL())
+            .setFooter({
+                name: `${interaction.user.tag}`,
+                iconURL: interaction.user.displayAvatarURL({
+                    dynamic: true
+                })
+            })
             .setTimestamp();
 
         const components = (state) => [

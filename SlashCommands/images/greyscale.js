@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "greyscale",
     description: "greyscale image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",

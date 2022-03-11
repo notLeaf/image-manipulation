@@ -10,6 +10,7 @@ const {
 module.exports = {
     name: "rip",
     description: "rip image",
+    category: "images",
     clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",
