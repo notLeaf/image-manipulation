@@ -13,7 +13,7 @@ module.exports = {
     clientPermissions: "ATTACH_FILES",
     options: [{
         name: "target",
-        description: "select a target",
+        description: ["ATTACH_FILES"],
         type: "USER",
         required: false
     }],

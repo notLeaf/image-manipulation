@@ -10,7 +10,7 @@ const {
 module.exports = {
     name: "triggered",
     description: "triggered gif",
-    clientPermissions: "ATTACH_FILES",
+    clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "target",
         description: "select a target",

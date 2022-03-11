@@ -13,7 +13,7 @@ const {
 module.exports = {
     name: "changemymind",
     description: "changemymind image",
-    clientPermissions: "ATTACH_FILES",
+    clientPermissions: ["ATTACH_FILES"],
     options: [{
         name: "query",
         description: "text you want to say",
