@@ -21,14 +21,13 @@ module.exports = {
 
     run: async (client, interaction, args) => {
 
-        const text = interaction.options.getString('query')?.trim()?.split(/ +/g)?.join(" ");
-        if (text.length > 100) text = text.slice(0, 95) + '...'
+        let text = interaction.options.getString('query')?.trim()?.split(/ +/g)?.join(" ");
+        if (text.length > 50) text = text.slice(0, 45) + '...';
 
         const image = await Canvas.changemymind(text);
         const attachment = new MessageAttachment(image, "changemymind.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },

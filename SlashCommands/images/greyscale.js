@@ -25,11 +25,11 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.greyscale(avatar);
         const attachment = new MessageAttachment(image, "greyscale.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },

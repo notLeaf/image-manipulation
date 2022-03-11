@@ -25,11 +25,11 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.sepia(avatar);
         const attachment = new MessageAttachment(image, "sepia.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },

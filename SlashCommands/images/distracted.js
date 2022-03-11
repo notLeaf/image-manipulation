@@ -25,6 +25,7 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.distracted(interaction.member.displayAvatarURL({
             format: "png"
         }), avatar, interaction.client.user.displayAvatarURL({
@@ -33,7 +34,6 @@ module.exports = {
         const attachment = new MessageAttachment(image, "distracted.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },

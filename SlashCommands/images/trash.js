@@ -20,14 +20,17 @@ module.exports = {
     }],
 
     run: async (client, interaction) => {
-        
+
         const user = interaction.options.getUser('target') || interaction.member;
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.trash(avatar);
         const attachment = new MessageAttachment(image, "trash.png");
 
-        interaction.followUp({ embeds: [], files: [attachment] }).catch(() => {});
+        interaction.followUp({
+            files: [attachment]
+        }).catch(() => {});
     },
 };

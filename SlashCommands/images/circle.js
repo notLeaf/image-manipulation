@@ -14,7 +14,7 @@ module.exports = {
     clientPermissions: "ATTACH_FILES",
     options: [{
         name: "target",
-        description: ["ATTACH_FILES"],
+        description: "select a target",
         type: "USER",
         required: false
     }],
@@ -25,11 +25,11 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.circle(avatar);
         const attachment = new MessageAttachment(image, "circle.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },

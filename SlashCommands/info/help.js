@@ -20,7 +20,7 @@ module.exports = {
             .addField(`Links:`, `[Youtube Channel](https://www.youtube.com/channel/UC9yRVadElzxSO3ZUywK6Yig) - [Discord Server](https://discord.gg/yfD2Vmnr6F)`, true)
             .setColor('RANDOM')
             .setFooter({
-                name: `${interaction.user.tag}`,
+                text: `${interaction.user.tag}`,
                 iconURL: interaction.user.displayAvatarURL({
                     dynamic: true
                 })
@@ -32,7 +32,7 @@ module.exports = {
             .setDescription(client.slashCommands.filter(cmd => cmd.category === "images").map(cmd => `\`${cmd.name}\``).join(', '))
             .setColor('RANDOM')
             .setFooter({
-                name: `${interaction.user.tag}`,
+                text: `${interaction.user.tag}`,
                 iconURL: interaction.user.displayAvatarURL({
                     dynamic: true
                 })
@@ -45,7 +45,7 @@ module.exports = {
             .setDescription(client.slashCommands.filter(cmd => cmd.category === "info").map(cmd => `\`${cmd.name}\``).join(', '))
             .setColor('RANDOM')
             .setFooter({
-                name: `${interaction.user.tag}`,
+                text: `${interaction.user.tag}`,
                 iconURL: interaction.user.displayAvatarURL({
                     dynamic: true
                 })

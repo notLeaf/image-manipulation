@@ -17,7 +17,6 @@ Rename `config.example.json` to `config.json` and fill the parameters
 ```
 {
     "token": "your_bot_token",
-    "prefix": "your_prefix",
     "fail": "your_error_emoji"
 }
 ```

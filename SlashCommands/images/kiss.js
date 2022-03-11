@@ -25,13 +25,13 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.kiss(interaction.member.displayAvatarURL({
             format: "png"
         }), avatar);
         const attachment = new MessageAttachment(image, "kiss.png");
 
         interaction.followUp({
-            embed: [],
             files: [attachment]
         }).catch(() => {});
     },

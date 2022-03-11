@@ -25,13 +25,13 @@ module.exports = {
         const avatar = user.displayAvatarURL({
             format: "png"
         })
+
         const image = await Canvas.slap(interaction.member.displayAvatarURL({
             format: "png"
         }), avatar);
         const attachment = new MessageAttachment(image, "slap.png");
 
         interaction.followUp({
-            embeds: [],
             files: [attachment]
         }).catch(() => {});
     },
